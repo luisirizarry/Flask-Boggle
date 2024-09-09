@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div id="game">
+        <div id="board">
+            <table>
+                <tbody>
+                    {% for row in board %}
+                        <tr>
+                            {% for letter in row %}
+                                <td>{{ letter }}</td>
+                            {% endfor %}
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <div id="results">
+            <h2>Results</h2>
+            <ul id="words"></ul>
+        </div>
+        <div id="timer">
+            <h2>Time Left</h2>
+            <p id="time">60</p>
+        </div>
+        <div id="score">
+            <h2>Score</h2>
+            <p id="score-value">{{ score }}</p>
+        </div>
+        <div id="message">
+            <h2>Message</h2>
+            <p id="message-text"></p>
+        </div>
+        <div id="buttons">
+            <button id="start">Start</button>
+            <button id="stop">Stop</button>
+        </div>
+    </div>
+{% endblock %}
